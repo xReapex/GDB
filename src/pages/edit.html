@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/4cedd4ad5b.js" crossorigin="anonymous"></script>
+    <script src="../js/dataManager.js"></script>
+
+    <title>Gestionnaire - Edition</title>
+</head>
+
+<body onload="placeHolder(); applyDarkMode()">
+    <div class="container" style="margin-left: 4px;">
+
+        <!-- Balance edit -->
+        <div class="badge_budget shadow">
+            <div class="budget_text">
+                <div class="row">
+                    <div style="font-size: 18px; margin-top: 15px">Set balance value</div>
+                    <input min="-999999" max="999999" type="number" class="form-control" id="input_balance"
+                        style="width: 50%; height: 100%" />
+                    <a class="mb-2" href="./edit.html" style="width: 10%; margin-left: 3%; color: whitesmoke"
+                        onclick="setBalance(getChangeBalanceValue())"><i class="fas fa-check"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badge form -->
+        <div class="badge_form shadow">
+            <div class="form_text">
+                <div class="row">
+                    <div style="font-size: 18px; margin-top: 15px">Add new entry (income or expense)</div>
+
+                    <!-- Form -->
+                    <label for="choose_income_expense" style="margin-top: 15px;">Select entry type</label>
+                    <select id="form_entry_type" name="choose_income_expense" required class="form-control" style="width: 37%;">
+                        <option value="income">income</option>
+                        <option value="expense">expense</option>
+                    </select>
+
+                    <label for="choose_category" style="margin-top: 15px;">Select category</label>
+                    <select id="choose_category" name="choose_category" required class="form-control" style="width: 37%;">
+                        <option value="home">home</option>
+                        <option value="phone">phone</option>
+                        <option value="car">car</option>
+                        <option value="health">health</option>
+                        <option value="food">food</option>
+                        <option value="others">others</option>
+                    </select>
+
+                    <!-- Submit button -->
+                    <a type="button" style="width: 10%; color: whitesmoke; height: 75%; margin-left: 25%;" href="../../index.html"><i
+                            class="fas fa-check" onclick="processFormEntries()"></i></a>
+
+                    <label for="form_value" style="margin-top: 15px;">Enter a value</label>
+                    <input id="form_value" placeholder="ex: 132" min="0" max="999999" name="form_value" type="number"
+                        class="form-control" style="width: 37%;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Badge reset -->
+        <div class="badge_reset">
+            <div class="reset_text">
+                <div class="row">
+                    <div style="font-size: 18px; margin-top: 15px">Reset App data</div>
+                    <input min="-999999" max="999999" type="number" class="form-control" id="input_reset"
+                        style="width: 65%; height: 100%" placeholder="Set balance value after reset" />
+                    <a class="mb-2" href="../../index.html"
+                        onclick="resetDatabase(document.getElementById('input_reset').value);"
+                        style="width: 10%; margin-left: 3%; color: whitesmoke"><i class="fas fa-check"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home button -->
+    <a type="button" id="home_button" class="btn-circle btn-lg" title="Home" href="../../index.html"><i
+            class="fas fa-home"></i></a>
+</body>
+
+<script>
+    // change placeholder balance
+    function placeHolder() {
+        document.getElementById("input_balance").placeholder = getBalance();
+    }
+
+    // get value which be update in balance
+    function getChangeBalanceValue() {
+        if (document.getElementById("input_balance").value < 1) {
+            return document.getElementById("input_balance").value = 0;
+        } else {
+            return parseInt(document.getElementById("input_balance").value);
+        }
+    }
+
+    // get value which be update in balance after reset
+
+    //Badge balance
+    ScrollReveal().reveal(".badge_budget", {
+        origin: "top",
+        distance: "100px",
+        duration: 1000,
+    });
+
+    //Badge form
+    ScrollReveal().reveal(".badge_form", {
+        duration: 2000,
+        origin: 'left',
+        distance: '30%'
+    });
+
+    //Badge reset
+    ScrollReveal().reveal(".badge_reset", {
+        origin: "bottom",
+        distance: "100px",
+        duration: 1000,
+    });
+
+    //home button
+    ScrollReveal().reveal("#home_button", {
+        origin: "right",
+        distance: "100px",
+        duration: 1500,
+    });
+
+</script>
+
+</html>

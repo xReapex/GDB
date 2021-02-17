@@ -1,0 +1,19 @@
+{
+  "name": "gestionnaire_budget",
+  "version": "1.0.0",
+  "description": "Gestionnaire de budget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --platform=win32 --arch=x64 --icon=./src/img/icon.ico --asar=true"
+  },
+  "author": "Thomas. R",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.1.1",
+    "electron-packager": "^15.2.0"
+  },
+  "dependencies": {
+    "lowdb": "^1.0.0"
+  }
+}

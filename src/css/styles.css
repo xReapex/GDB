@@ -1,0 +1,113 @@
+body{
+    font-family: 'Bebas Neue', cursive;
+    overflow: hidden; 
+}
+
+input:focus{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+.badge_budget
+{
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 100px;
+    width: 340px;
+    background-color: #F99A46;
+    border-radius: 20px;
+}
+
+.budget_text, .reset_text, .form_text
+{
+    color: whitesmoke;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+.badge_subdiv
+{
+    background-color: #A4A1FC;
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 90px;
+    width: 160px;
+    border-radius: 20px;
+}
+
+.subdiv_text
+{
+    color: whitesmoke;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#badge_subdiv_rouge
+{
+    background-color: #FF6565;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+.dark-mode{
+    background-color: #04293A;
+}
+
+.badge_form
+{
+    background-color: #A4A1FC;
+    margin-left: 5px;
+    margin-top: 15px;
+    width: 340px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.badge_reset
+{
+    background-color:  #FF6565;
+    margin-left: 5px;
+    margin-top: 10px;
+    width: 340px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+#form_category
+{
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.leaderboard_item
+{
+    max-width: 280px;
+    min-width: 80px;
+    height: 23px;
+    border-radius: 20px;
+    margin-left: 9%;
+    margin-top: 6.2%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.shadow {
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc;
+  }

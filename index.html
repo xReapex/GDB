@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://kit.fontawesome.com/4cedd4ad5b.js" crossorigin="anonymous"></script>
+  <script src="./src/js/dataManager.js"></script>
+
+  <title>Gestionnaire - Bilan</title>
+
+</head>
+
+<body onload="initialisation(); applyDarkMode()">
+
+  <div class="container" style="margin-left: 4px;">
+
+    <!-- Balance -->
+    <div class="badge_budget shadow">
+      <div class="budget_text">
+        <div class="row">
+          <div class="col">
+            <div style="font-size: 18px; margin-top: 15px;">Balance <a href="./src/pages/edit.html"><i
+                  class="fas fa-pen fa-xs" style="color: whitesmoke;"></i></a></div>
+            <div style="font-size: 35px;" id="balance_value"></div>
+          </div>
+          <div class="col">
+            <img src="./src/img/portefeuille.png" height="64" width="64"
+              style="float: right; margin-right: 30px; margin-top: 15px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entrée / sortie -->
+    <div class="row" style="margin-top: 7px;">
+      <div class="col-5">
+        <div class="badge_subdiv shadow" id="badge_income">
+          <div class="subdiv_text">
+            <div class="row">
+              <div class="col">
+                <div style="font-size: 15px; margin-top: 17px;">Income</div>
+                <div style="font-size: 20px;" id="income_value"></div>
+              </div>
+              <div class="col">
+                <img src="./src/img/sac_argent.png" height="50" width="50" style="margin-right: 5px; margin-top: 18px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-5" style="margin-left: 20px;">
+        <div class="badge_subdiv shadow" id="badge_subdiv_rouge">
+          <div class="subdiv_text">
+            <div class="row">
+              <div class="col">
+                <div style="font-size: 15px; margin-top: 17px;">Expense</div>
+                <div style="font-size: 20px;" id="expense_value"></div>
+              </div>
+              <div class="col">
+                <img src="./src/img/main_qui_prend_argent.png" height="50" width="50"
+                  style="margin-right: 5px; margin-top: 15px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Leaderboard -->
+
+    <div class="all_item">
+      <div class="leaderboard_item shadow" id="home" style="margin-top: 10%; background-color: #A2A3F5;">
+        home
+      </div>
+      <div class="leaderboard_item shadow" id="phone" style="background-color: #5DE29F;">
+        phone
+      </div>
+      <div class="leaderboard_item shadow" id="car" style="background-color: #FE6665;">
+        car
+      </div>
+      <div class="leaderboard_item shadow" id="health" style="background-color: #FEC164;">
+        health
+      </div>
+      <div class="leaderboard_item shadow" id="food" style="background-color: #BBBBBB;">
+        food
+      </div>
+      <div class="leaderboard_item shadow" id="others" style="background-color: #ffa175;">
+        others
+      </div>
+    </div>
+
+    <a type="button" style="background-color: transparent;" class="btn-circle btn-lg" title="Dark mode" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a>
+
+  </div>
+  <script>
+
+    //Badge budget
+    ScrollReveal().reveal('.badge_budget', {
+      origin: 'top',
+      distance: '100px',
+      duration: 1000
+    });
+
+    //Badge subdiv gauche
+    ScrollReveal().reveal('#badge_income', {
+      origin: 'left',
+      distance: '30px',
+      duration: 1000,
+      delay: 750
+    });
+
+    //Badge subdiv droite
+    ScrollReveal().reveal('#badge_subdiv_rouge', {
+      origin: 'right',
+      distance: '30px',
+      duration: 1000,
+      delay: 750
+    });
+
+    // Right fixed button
+    ScrollReveal().reveal('.btn-circle', {
+      duration: 1000,
+      delay: 1500
+    });
+
+    // leaderboard item
+    ScrollReveal().reveal('.all_item', {
+      duration: 1000,
+      delay: 1500,
+      origin: 'left',
+      distance: '100%'
+    });
+
+  </script>
+
+  <script src="./renderer.js"></script>
+</body>
+
+</html>
